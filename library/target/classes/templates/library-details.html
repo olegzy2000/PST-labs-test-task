@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+        .body {
+            background: #c7b39b url(k.jpg);
+            color: #fff;
+        }
+        .myColor {
+            color: white
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Library</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+</head>
+<body>
+<header>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <a class="myColor" href="/">Main page</a>
+        <a class="myColor" href="/about">About</a>
+        <a class="myColor" href="/library/add">Add</a>
+        <a class="myColor" href="/library">Library</a>
+    </div>
+    <div class="container mt-5">
+        <hi>Library details</hi>
+        <div th:each="el:${book}" class="alert alert-info mt-2">
+            <h3 th:text="${el.title}"/>
+            <p th:text="${el.discription}"/>
+            <a th:href="'/library/'+${el.id}+'/edit'" class="btn btn-warning">edit</a>
+            <form th:action="'/library/'+${el.id}+'/remove'" method="post">
+                <button class="btn btn-warning" type="submit">remove</button>
+            </form>
+        </div>
+    </div>
+</header>
+<a>Library page</a>
+</body>
+</html>

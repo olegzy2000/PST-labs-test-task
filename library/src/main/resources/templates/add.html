@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background: #c7b39b url(k.jpg);
+            color: #fff;
+        }
+        .myColor {
+            color: white
+        }
+    </style>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+</head>
+<body>
+<header>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <a class="myColor" href="/">Main page</a>
+        <a class="myColor" href="/about">About</a>
+        <a class="myColor" href="/library/add">Add</a>
+        <a class="myColor" href="/library">Library</a>
+    </div>
+    <div class="container mt-5">
+        <h1>Add book</h1>
+        <form action="/library/add" method="post">
+            <input type="text" name="title" placeholder="input title of book" class="form-control">
+            <input type="text" name="nameOfAuthor" placeholder="input name of author" class="form-control">
+            <textarea type="text" name="discription" placeholder="input discription" class="form-control"></textarea>
+            <button type="submit" class="btn btn-success">Add book</button>
+        </form>
+    </div>
+</header>
+</body>
+</html>

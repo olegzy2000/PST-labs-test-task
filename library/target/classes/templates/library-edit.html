@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+        body {
+            background: #c7b39b url(k.jpg);
+            color: #fff;
+        }
+        .myColor {
+            color: white
+        }
+    </style>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+</head>
+<body>
+<header>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <a class="myColor" href="/">Main page</a>
+        <a class="myColor" href="/about">About</a>
+        <a class="myColor" href="/library/add">Add</a>
+        <a class="myColor" href="/library">Library</a>
+    </div>
+    <div class="container mt-5">
+        <h1>edit book</h1>
+        <div th:each="el:${book}">
+        <form  method="post">
+            <input type="text" th:value="${el.title}" name="title" placeholder="input title of book" class="form-control">
+            <input type="text" th:value="${el.nameOfAutor}" name="nameOfAuthor" placeholder="input name of author" class="form-control">
+            <textarea type="text" th:text="${el.discription}" name="discription" placeholder="input discription" class="form-control"></textarea>
+            <button type="submit" class="btn btn-success">edit</button>
+        </form>
+        </div>
+    </div>
+</header>
+</body>
+</html>
